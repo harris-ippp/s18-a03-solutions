@@ -3,10 +3,6 @@ import helper
 
 data = helper.read_salaries()
 
-count = 0
-for row in data:
-    if row[3] == 'POLICE':
-        count = count + 1
-
-print(count)
+departments = helper.get_column(data, 3)
+print(helper.count(departments, 'POLICE'))
 

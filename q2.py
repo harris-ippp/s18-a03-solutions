@@ -3,10 +3,6 @@ import helper
 
 data = helper.read_salaries()
 
-count = 0
-for row in data:
-    if row[4] == 'F':
-        count = count + 1
-
-print(count)
+employee_type = helper.get_column(data, 4) # get employee type (full or part-time)
+print(helper.count(employee_type, 'F'))    # print full-time count
 
