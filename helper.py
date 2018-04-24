@@ -10,10 +10,16 @@ def read_salaries():
             line = line[:-1]
             row = line.split(',')
             salary = row[-2]
+            
+            # if salary string is non-empty
             if len(salary) > 0:
+                # remove the dollar sign and convert to float
                 row[-2] = float(salary[1:])
 
+            # remove the initial quote from the last name
             row[0] = row[0][1:]
+            # remove the first two spaces and final quote from the first name,
+            # then split on space and take the first word
             row[1] = row[1][2:-1].split(' ')[0]
 
             data.append(row)
